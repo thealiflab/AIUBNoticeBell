@@ -1,1 +1,1 @@
-# AIUB Notice Bell 🔔
+# 🔔 AIUB Notice Bell 
