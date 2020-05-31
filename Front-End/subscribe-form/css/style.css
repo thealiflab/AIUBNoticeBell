@@ -214,8 +214,7 @@ body {
   line-height: 1.8;
   color: #222;
   background: transparent;
-  font-weight: 400;
-  font-family: Poppins; }
+  font-weight: 100; }
 
 .container {
   width: 900px;
@@ -267,7 +266,7 @@ body {
   -ms-transform: translate(-50%, -50%); }
 
 .signup {
-  margin-bottom: 150px; }
+  margin-bottom: 70px; }
 
 .signup-form {
   padding: 75px 0; }
@@ -464,7 +463,8 @@ label.valid {
   -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
   -o-transform: translateY(0);
-  -ms-transform: translateY(0); }
+  -ms-transform: translateY(0); 
+}
 
 .material-icons-name {
   font-size: 18px; }
@@ -524,6 +524,10 @@ label.valid {
 
 .zmdi-google {
   background: #e72734; }
+
+.zmdi-coffee {
+  color: #5983fc;
+}
 
 .signin-form {
   margin-right: 90px;
