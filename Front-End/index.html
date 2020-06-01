@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AIUB Notice Bell</title>
+
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155073814-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-155073814-1');
+    </script>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Registration</h2>
+                        <form method="POST" class="register-form" id="register-form" novalidate action="/">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Full Name (AIUB Format)" required autofocus/>
+                            </div>
+                            <div class="form-group">
+                                <label for="username"><i class="zmdi zmdi-account-add material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Username (Unique) required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone"><i class="zmdi zmdi-phone-in-talk"></i></label>
+                                <input type="phone" name="phone" id="phone" placeholder="Your Phone No" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="label-agree-term">&nbsp;&nbsp; I am &nbsp;</label>
+                                <input type="radio" name="male" id="agree-term" class="agree-term" checked required/>
+                                <label for="agree-term" class="label-agree-term"><i class="zmdi zmdi-male-alt"></i>&nbsp;&nbsp;Male</label>
+
+                                <input type="radio" name="male" id="agree-term" class="agree-term" required/>
+                                <label for="agree-term" class="label-agree-term"><i class="zmdi zmdi-female"></i>&nbsp;&nbsp;Female</label>
+                            </div>
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="subscribe" id="subscribe" class="form-submit" value="Subscribe"/>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+
+                    <div class="signup-image">
+                        <figure><img src="assets/images/anb-logo5.png" alt="ANB-logo"></figure>
+                        <a href="#" class="signup-image-link">About This Project</a>
+                        <a href="#" class="signup-image-link">Unsubscribe The service</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; Developed with <i class="zmdi zmdi-coffee"></i> by <a href="https://ahmedalif.com" target="_blank">Alif</a></p>
+        </footer>
+    </div>
+
+    
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Particle JS -->
+    <div id="particles-js"></div>
+    <script type="text/javascript" src="assets/particle-js/particles.js"></script>
+    <script type="text/javascript" src="assets/particle-js/app.js"></script>
+    
+</body>
+</html>
