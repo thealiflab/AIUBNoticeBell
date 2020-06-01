@@ -10,7 +10,7 @@ app.use(express.static("public"));  //To use local assets
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/",function(req,res){
-    res.sendFile(__dirname + "/infopost.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.listen(3306, function(){
@@ -37,11 +37,10 @@ connection.connect(function(err){
 
 
 app.post("/",function(req,res){
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
+    var aiubname = req.body.name;
     var username = req.body.username;
-    var email = req.body.email;
-    var phone = req.body.phone;
+    var mail = req.body.email;
+    var phoneno = req.body.phone;
     var gender = req.body.gender;
 
     console.log(firstName,lastName,username,email,phone,gender);
