@@ -48,65 +48,57 @@ app.post("/", [
 
 ],function(req,res){
 
+    function insertToDatabase(){
+        var sql = "insert into registration values('','"+aiubname+"', '"+username+"', '"+mail+"','"+phoneno+"', '"+gender+"')";
+        connection.query(sql, function (err) {
+            if (err){
+                console.log("Reason for showing fail page: "+err);
+                res.sendFile(__dirname+"/Front-End/fail.html");
+                return;
+            }
+            else{
+                console.log('Data inserted Successfully');
+                res.sendFile(__dirname+"/Front-End/subscribed.html");
+                //TODO: Confirmation mail send setup
+            }
+        });
+    }
+
     const errors = validationResult(req);
     console.log(errors.mapped());
-    res.render('index',{
-        error: errors.mapped()
-    });
 
-    // if (!errors.isEmpty()) {
-    //     return res.status(422).json({ errors: errors.array() });
-    // }
+    if(!errors.isEmpty()){
+        res.render('index',{error: errors.mapped()});
+    }
+    else{
+        //Initialize inputs
+        var aiubname = req.body.name.trim().toUpperCase()
+        var username = req.body.username.trim();
+        var mail = req.body.email.trim();
+        var phoneno = req.body.phone.trim();
+        var gender = req.body.gender;
 
-    // var errors = validationResult(req).array();
-    // if (errors) {
-    //     req.session.errors = errors;
-    //     req.session.success = false;
-    //     res.redirect("/");
-    // } else {
-    //     req.session.success = true;
-    //     res.redirect("/");
-    // }
+        //Printing inputs
+        console.log(aiubname,username,mail,phoneno,gender);
 
+        //Checking duplicated username
+        connection.query('SELECT username FROM registration WHERE username ="' +username+'"', function (err, result) {
+            if (err) throw err;
 
+            //Result length = 0 means no duplicate username
+            console.log(result.length);
 
-    // var aiubname = req.body.name.trim().toUpperCase()
-    // var username = req.body.username.trim();
-    // var mail = req.body.email.trim();
-    // var phoneno = req.body.phone.trim();
-    // var gender = req.body.gender;
+            //Conditions for inserting into database if no duplicate username found.
+            if(result.length == 0){
+                insertToDatabase();
 
-    // console.log(aiubname,username,mail,phoneno,gender);
-
-    // connection.query('SELECT username FROM registration WHERE username ="' +username+'"', function (err, result) {
-    //     if (err) throw err;
-
-    //     console.log(result.length);
-    //     //checking duplicate username
-    //     if(result.length == 0){
-    //         var sql = "insert into registration values('','"+aiubname+"', '"+username+"', '"+mail+"','"+phoneno+"', '"+gender+"')";
-            
-    //         connection.query(sql, function (err) {
-    //             if (err){
-    //                 res.sendFile(__dirname+"/Front-End/fail.html");
-    //                 console.log(err);
-    //                 return;
-    //             }
-    //             else{
-    //                 res.sendFile(__dirname+"/Front-End/subscribed.html");
-    //             }
-    //         });
-    //         console.log("Username not exist, easy to enter data into database");
-    //     }else{
-    //         console.log('Username exist!!');
-    //         res.sendFile(__dirname+"/Front-End/fail.html");
-    //     }
+            }else{
+                console.log('Username exist!!');
+                res.render('index',{duplicateUsernameMsg: "Username already exists"});
+            }
+          });
+    }
     
-
-    //   });
-
-    
-
     //connection.end();
 
 });
