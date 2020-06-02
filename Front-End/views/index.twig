@@ -60,40 +60,32 @@
                                 {% if(error.name) %}
                                     <p style="color:red;">{{error.name.msg}}</p>
                                 {% endif %}
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your Name is required.
-                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account-add material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Username (Unique)" />
                                 {% if(error.username) %}
                                     <p style="color:red;">{{error.username.msg}}</p>
                                 {% endif %}
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your Username is required.
-                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email" />
                                 {% if(error.email) %}
                                     <p style="color:red;">{{error.email.msg}}</p>
                                 {% endif %}
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your Email is required.
-                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone-in-talk"></i></label>
                                 <input type="phone" name="phone" id="phone" placeholder="Your Phone No : Ex 017XXXXXXXX" />
                                 {% if(error.phone) %}
                                     <p style="color:red;">{{error.phone.msg}}</p>
                                 {% endif %}
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your Phone-Number is required.
-                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="gender" class="label-agree-term">I am &nbsp;</label>
                                 <div class="custom-control custom-radio">
@@ -109,6 +101,7 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="subscribe" id="subscribe" class="form-submit" value="Subscribe"/>
                             </div>
+                            
                             <br>
                         </form>
                     </div>
