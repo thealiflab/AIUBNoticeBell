@@ -2,8 +2,6 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const {check, validationResult} = require('express-validator');
-// const session = require('express-session');
-// const hbs = require('express-hbs');
 var mysql = require("mysql");
 
 
@@ -12,14 +10,6 @@ const app = express();
 
 app.use(express.static("Front-End"));  //To use local assets
 app.use(bodyParser.urlencoded({extended: true}));
-
-// app.engine('hbs', hbs.express4({
-//     partialsDir: __dirname + '/views/partials'
-// }));
-// app.set('view engine', 'hbs');
-// app.set('views', __dirname + '/views/partials');
-
-
 
 app.get("/",function(req,res){
     res.sendFile(__dirname + "/Front-End/index.html");
@@ -55,16 +45,6 @@ app.post("/", [
     check('phone', 'Your phone number is invalid').not().isNumeric(),
 
 ],function(req,res){
-
-    // var errors = validationResult(req).array();
-    // if (errors) {
-    //     req.session.errors = errors;
-    //     req.session.success = false;
-    //     res.redirect("/");
-    // } else {
-    //     req.session.success = true;
-    //     res.redirect("/");
-    // }
 
     var aiubname = req.body.name.trim().toUpperCase()
     var username = req.body.username.trim();
