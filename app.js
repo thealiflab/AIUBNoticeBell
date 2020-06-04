@@ -6,28 +6,29 @@ var mysql = require("mysql");
 
 const app = express();
 
-app.use(express.static("Front-End"));  //To use local assets
+app.use(express.static("public"));  //To use local assets
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'twig');
-app.set('views','./Front-End/views');
+app.set('views','./public/views');
 
 
 
-app.get("/",function(req,res){
-    //res.sendFile(__dirname + "/Front-End/index.html");
+app.get("/aiubnoticebell",function(req,res){
+    //res.sendFile(__dirname + "/public/index.html");
     res.render('index');
 });
 
-app.listen(3000, function(){
+app.listen(function(){
     console.log("App started....");
 });
 
 // MySQL setup Local device
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    pass: '',
-    database: 'aiubnoticebell'
+    port: 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: 'busihfkl_aiubnoticebell'
 });
 
 //ensure database is running
@@ -39,8 +40,8 @@ connection.connect(function(err){
     
 });
 
-//TODO: Validate name for finding any number in it or not
-app.post("/", [
+
+app.post("/aiubnoticebell", [
     check('name','Invalid Name').not().isEmpty().escape().isLength({min: 6}),
     check('username', 'Invalid Username').not().isEmpty().escape().isLength({min: 4}),
     check('email', 'Invalid Email').not().isEmpty().isEmail().escape().normalizeEmail(),
@@ -53,12 +54,12 @@ app.post("/", [
         connection.query(sql, function (err) {
             if (err){
                 console.log("Reason for showing fail page: "+err);
-                res.sendFile(__dirname+"/Front-End/fail.html");
+                res.sendFile(__dirname+"/public/fail.html");
                 return;
             }
             else{
                 console.log('Data inserted Successfully');
-                res.sendFile(__dirname+"/Front-End/subscribed.html");
+                res.sendFile(__dirname+"/public/subscribed.html");
                 //TODO: Confirmation mail send setup
             }
         });
@@ -103,6 +104,6 @@ app.post("/", [
 
 });
 
-app.post("/failure", function(req,res){
-    res.redirect("/");
+app.post("/aiubnoticebell/failure", function(req,res){
+    res.redirect("/aiubnoticebell");
 });
