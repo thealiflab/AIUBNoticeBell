@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AIUB Notice Bell</title>
+
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/aiubnoticebell/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/aiubnoticebell/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/aiubnoticebell/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/aiubnoticebell/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/aiubnoticebell/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/aiubnoticebell/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/aiubnoticebell/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/aiubnoticebell/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/aiubnoticebell/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/aiubnoticebell/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/aiubnoticebell/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/aiubnoticebell/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/aiubnoticebell/favicon-16x16.png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/aiubnoticebell/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/aiubnoticebell/style.css">
+
+    <style>
+        body {
+        text-align: center;
+        padding: 40px 0;
+        }
+        .checkmark {
+          color: #fc7159;
+          font-size: 100px;
+          line-height: 200px;
+          margin-left:-15px;
+        }
+        .card {
+          background: white;
+          padding: 60px;
+          border-radius: 4px;
+          box-shadow: 0 2px 3px #C8D0D8;
+          display: inline-block;
+          margin: 0 auto;
+        }
+      </style>
+
+</head>
+<body>
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="signup-content">
+                <div class="card">
+                    <div style="border-radius:200px; height:200px; width:200px; background: #e7c9bf; margin:0 auto;">
+                      <i class="checkmark">X</i>
+                    </div>
+                      <h1>Process Failed!</h1> 
+                      <p>Something went wrong,<br>please try again!</p>
+                      <br>
+                      <form action="/failure" method="POST">
+                        <input type="submit" name="subscribe" id="subscribe" class="form-submit" value="Go to APP"/>
+                      </form>
+                      
+                    </div>
+                </div>
+            <div class="container">
+                
+            </div>
+        </section>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; Developed by <a href="https://ahmedalif.com" target="_blank">Alif</a></p>
+        </footer>
+    </div>
+
+    
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Particle JS -->
+    <div id="particles-js"></div>
+    <script type="text/javascript" src="/aiubnoticebell/particles.js"></script>
+    
+    <script type="text/javascript" src="/aiubnoticebell/app.js"></script>
+    
+</body>
+</html>

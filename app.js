@@ -54,12 +54,12 @@ app.post("/aiubnoticebell", [
         connection.query(sql, function (err) {
             if (err){
                 console.log("Reason for showing fail page: "+err);
-                res.sendFile(__dirname+"/public/fail.html");
+                res.render('fail');
                 return;
             }
             else{
                 console.log('Data inserted Successfully');
-                res.sendFile(__dirname+"/public/subscribed.html");
+                res.render('subscribed');
                 //TODO: Confirmation mail send setup
             }
         });
