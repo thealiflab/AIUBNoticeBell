@@ -19,7 +19,7 @@ app.get("/",function(req,res){
 });
 
 app.listen(3000, function(){
-    console.log("Server started....");
+    console.log("App started....");
 });
 
 // MySQL setup Local device
@@ -39,12 +39,12 @@ connection.connect(function(err){
     
 });
 
-
+//TODO: Validate name for finding any number in it or not
 app.post("/", [
     check('name','Invalid Name').not().isEmpty().escape().isLength({min: 6}),
     check('username', 'Invalid Username').not().isEmpty().escape().isLength({min: 4}),
     check('email', 'Invalid Email').not().isEmpty().isEmail().escape().normalizeEmail(),
-    check('phone', 'Invalid Phone Number').not().isEmpty().escape().isNumeric().isLength({min: 11}),
+    check('phone', 'Invalid Phone Number').not().isEmpty().escape().isNumeric().isLength({min: 11,max:11}),
 
 ],function(req,res){
 
@@ -89,7 +89,7 @@ app.post("/", [
             console.log(result.length);
 
             //Conditions for inserting into database if no duplicate username found.
-            if(result.length == 0){
+            if(result.length === 0){
                 insertToDatabase();
 
             }else{
